@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { orientation, direction, xAxis, yAxis } from "./actions/action";
-import ActionView from "./components/ActionView";
+import { Container, Button, InputContainer, useWindowSize, UlContainer } from "./components";
 
 const initialState = {
   location: null,
@@ -13,6 +13,7 @@ const initialState = {
 function App() {
   const [state, setState] = React.useState(initialState);
   const [value, setValue] = React.useState("");
+  let [winWidth] = useWindowSize();
 
   const clearState = () => {
     setValue("");
@@ -112,52 +113,33 @@ function App() {
     setValue(value);
   };
 
-  // Iterate through our actions to print to screen
-  const action = state.actions.map((elem, index) => (
-    <ActionView key={index} value={elem} />
-  ));
-
   return (
-    <div className="container my-2">
-      <div className="row">
-        <div className="col-md-8 offset-md-2">
-          <h1 className="text-center">Toy Robot Simulator</h1>
-        </div>
+    <Container width={winWidth}>
+      <div>
+        <h1>Toy Robot Simulator</h1>
       </div>
-      <div className="row">
-        <div className="col-md-8 offset-md-2">
-          <div className="input-group">
-            <input
-              onKeyPress={(e) => handlePress(e)}
-              onChange={(e) => handleChange(e)}
-              type={'text'}
-              value={value}
-              className="form-control"
-              placeholder="Enter your move here..."
-            />
-            {state.place ? (
-              <button
-                onClick={clearState}
-                className="btn btn-danger btn-block mt-2"
-              >
-                Reset
-              </button>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
+      <div>
+        <InputContainer
+          onKeyPress={(e) => handlePress(e)}
+          onChange={(e) => handleChange(e)}
+          type={"text"}
+          value={value}
+          placeholder="Enter your move here..."
+        />
+        <br />
+        <br />
+        {state.place ? <Button onClick={clearState}>Reset</Button> : ""}
       </div>
       {state.place ? (
-        <div className="row mt-2">
-          <div className="col-md-8 offset-md-2">
-            <ul className="list-group">{action}</ul>
-          </div>
-        </div>
+          <UlContainer>
+            {state.actions.map((elem, index) => (
+              <li key={index}>{elem}</li>
+            ))}
+          </UlContainer>
       ) : (
         ""
       )}
-    </div>
+    </Container>
   );
 }
 
