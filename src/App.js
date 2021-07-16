@@ -117,8 +117,6 @@ function App() {
     <ActionView key={index} value={elem} />
   ));
 
-  console.log('shshs', state.actions)
-
   return (
     <div className="container my-2">
       <div className="row">
@@ -132,6 +130,7 @@ function App() {
             <input
               onKeyPress={(e) => handlePress(e)}
               onChange={(e) => handleChange(e)}
+              type={'text'}
               value={value}
               className="form-control"
               placeholder="Enter your move here..."
