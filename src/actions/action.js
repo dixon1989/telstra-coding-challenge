@@ -17,20 +17,20 @@ export const yAxis = {
 
 export const direction = {
   x: {
-    "0": {
+    0: {
       y: {
-        "1": "NORTH",
+        1: "NORTH",
         "-1": "SOUTH",
       },
     },
-    "1": {
+    1: {
       y: {
-        "0": "EAST",
+        0: "EAST",
       },
     },
     "-1": {
       y: {
-        "0": "WEST",
+        0: "WEST",
       },
     },
   },
