@@ -5,7 +5,7 @@ describe("Telstra Challenge Page", () => {
 });
 
 describe("Telstra Challenge Page Scenario A", () => {
-  it("toy robot should achieve the Scenario A", () => {
+  it("toy robot should achieve the Result of Scenario A", () => {
     cy.get("input[type=text]").type("PLACE 0,0,NORTH{enter}");
     cy.get("input[type=text]").type("MOVE{enter}");
     cy.get("input[type=text]").type("REPORT{enter}");
@@ -15,7 +15,7 @@ describe("Telstra Challenge Page Scenario A", () => {
 });
 
 describe("Telstra Challenge Page Scenario B", () => {
-  it("toy robot should achieve the Scenario B", () => {
+  it("toy robot should achieve the Result of Scenario B", () => {
     cy.get("input[type=text]").type("PLACE 0,0,NORTH{enter}");
     cy.get("input[type=text]").type("LEFT{enter}");
     cy.get("input[type=text]").type("REPORT{enter}");
@@ -25,7 +25,7 @@ describe("Telstra Challenge Page Scenario B", () => {
 });
 
 describe("Telstra Challenge Page Scenario C", () => {
-  it("toy robot should achieve the Scenario C", () => {
+  it("toy robot should achieve the Result of Scenario C", () => {
     cy.get("input[type=text]").type("PLACE 1,2,EAST{enter}");
     cy.get("input[type=text]").type("MOVE{enter}");
     cy.get("input[type=text]").type("MOVE{enter}");
@@ -38,7 +38,7 @@ describe("Telstra Challenge Page Scenario C", () => {
 });
 
 describe("Telstra Challenge Page Scenario D", () => {
-  it("toy robot should achieve the Scenario D", () => {
+  it("toy robot should achieve the Result of Scenario D", () => {
     cy.get("input[type=text]").type("PLACE 1,2,EAST{enter}");
     cy.get("input[type=text]").type("MOVE{enter}");
     cy.get("input[type=text]").type("LEFT{enter}");
