@@ -68,7 +68,7 @@ function App() {
         if (command === "MOVE") {
           const moveX = state.face.x;
           const moveY = state.face.y;
-          // Make sure the robot won't fall off the table
+          // Make sure the robot must be prevented from falling to destruction
           const nextX = state.location.x + moveX;
           const nextY = state.location.y + moveY;
           if (nextX > -1 && nextX < 5 && nextY > -1 && nextY < 5) {
@@ -117,6 +117,8 @@ function App() {
     <ActionView key={index} value={elem} />
   ));
 
+  console.log('shshs', state.actions)
+
   return (
     <div className="container my-2">
       <div className="row">
@@ -132,7 +134,7 @@ function App() {
               onChange={(e) => handleChange(e)}
               value={value}
               className="form-control"
-              placeholder="Enter move here..."
+              placeholder="Enter your move here..."
             />
             {state.place ? (
               <button
